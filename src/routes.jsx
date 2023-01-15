@@ -46,12 +46,6 @@ const routes = (isLoggedIn, location) => [
             {path: 'secret', element: <Secret/>},
         ]
     },
-    // {
-    //     path: 'admin', element: <Admin/>, children: [
-    //         {path: 'secret', element: <Secret/>},
-    //     ]
-    // }
-
 ]
 
 export default routes

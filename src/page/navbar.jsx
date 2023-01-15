@@ -1,59 +1,63 @@
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
-function Navbar(isLoggedIn) {
+function Navbar({isLoggedIn}) {
 
+    const createClass = ({isActive}) => isActive ? 'text-fuchsia-700 mx-2' : "text-white mx-2"
 
     return (
         <nav className="bg-gray-800">
             <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-                <a href="#" className="text-white font-medium">
+                <NavLink to="#" className="text-white font-medium">
                     {isLoggedIn ? '👨' : '👤'}
-                </a>
+                </NavLink>
                 <div className="flex items-center">
 
-                    <a href="/redirect" className="text-white mr-4">
-                        redirect
-                    </a>
 
-                    <a href="/color/red" className="text-white mr-4">
+                    <NavLink to="/redirect" className={createClass} end>
+                        redirect
+                    </NavLink>
+
+
+                    <NavLink to="/color/red" className={createClass} end>
                         🟢 /color/red
-                    </a>
-                    <a href="/color/blue" className="text-white mr-4">
+                    </NavLink>
+                    <NavLink to="/color/blue" className={createClass} end>
                         /color/blue
-                    </a>
+                    </NavLink>
                     {/*================================*/}
-                    <a href="/frame" className="text-white mr-4">
+                    <NavLink to="/frame" className={createClass} end>
                         🟢 frame
-                    </a>
-                    <a href="/frame/red" className="text-white mr-4">
+                    </NavLink>
+                    <NavLink to="/frame/red" className={createClass} end>
                         /frame/red
-                    </a>
-                    <a href="/frame/blue" className="text-white mr-4">
+                    </NavLink>
+                    <NavLink to="/frame/blue" className={createClass} end>
                         /frame/blue
-                    </a>
-                    <a href="/frame/new" className="text-white mr-4">
+                    </NavLink>
+                    <NavLink to="/frame/new" className={createClass} end>
                         /frame/new
-                    </a>
+                    </NavLink>
                     {/*========================================*/}
-                    <a href="/post" className="text-white mr-4">
+                    <NavLink to="/post" className={createClass} end>
                         🟢 post
-                    </a>
-                    <a href="/post/123" className="text-white mr-4">
+                    </NavLink>
+                    <NavLink to="/post/123" className={createClass} end>
                         /post/123
-                    </a>
-                    <a href="/post/678" className="text-white mr-4">
+                    </NavLink>
+                    <NavLink to="/post/678" className={createClass} end>
                         /post/678
-                    </a>
+                    </NavLink>
                     {/*========================================*/}
-                    <a href="/auth" className="text-white mr-4">
+                    <NavLink to="/auth" className={createClass} end>
                         🟢 /auth
-                    </a>
-                    <a href="/admin" className="text-white mr-4">
+                    </NavLink>
+                    <NavLink to="/admin" className={createClass} end>
                         /admin
-                    </a>
-                    <a href="/admin/secret" className="text-white mr-4">
+                    </NavLink>
+                    <NavLink to="/admin/secret" className={createClass} end>
                         /admin/secret
-                    </a>
+                    </NavLink>
 
                 </div>
             </div>
